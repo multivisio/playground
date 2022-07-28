@@ -23,5 +23,8 @@
   "dependencies": {
     "@multivisio/webpacker": "^1.0.28",
     "bootstrap": "^5.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
