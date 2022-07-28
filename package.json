@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config node_modules/@multivisio/webpacker/configuration/webpack.prod.config.js --mode=production",
+    "watch": "webpack --config node_modules/@multivisio/webpacker/configuration/webpack.dev.config.js --mode=development --watch",
+    "dev": "webpack --config node_modules/@multivisio/webpacker/configuration/webpack.dev.config.js --mode=development"
   },
   "keywords": [],
   "author": "Jeannie",
@@ -16,5 +19,9 @@
     "url": "https://github.com/multivisio/playground/issues"
   },
   "homepage": "https://github.com/multivisio/playground#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@multivisio/webpacker": "^1.0.28",
+    "bootstrap": "^5.2.0"
+  }
 }
