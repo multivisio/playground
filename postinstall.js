@@ -13,8 +13,12 @@ if (!json.hasOwnProperty("scripts")) {
   json.scripts = {};
 }
 
+if (!json.scripts.hasOwnProperty("watch")) {
+  json.scripts.watch = "webpack --watch";
+}
+
 if (!json.scripts.hasOwnProperty("serve")) {
-  json.scripts.serve = "webpack serve --watch";
+  json.scripts.serve = "webpack serve --open";
 }
 
 if (!json.scripts.hasOwnProperty("build")) {

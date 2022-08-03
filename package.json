@@ -1,6 +1,6 @@
 {
   "name": "@multivisio/playground",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "",
   "files": [
     "postinstall.js",
@@ -14,7 +14,7 @@
     "access": "public"
   },
   "scripts": {
-    "postinstall": "node ./postinstall.js",
+    "postinstall": "node ./postinstall.js"
   },
   "repository": {
     "type": "git",
