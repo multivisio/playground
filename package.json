@@ -15,8 +15,6 @@
   },
   "scripts": {
     "postinstall": "node ./postinstall.js",
-    "serve": "webpack --watch",
-    "build": "webpack"
   },
   "repository": {
     "type": "git",

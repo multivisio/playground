@@ -14,7 +14,7 @@ if (!json.hasOwnProperty("scripts")) {
 }
 
 if (!json.scripts.hasOwnProperty("serve")) {
-  json.scripts.serve = "webpack --watch";
+  json.scripts.serve = "webpack serve --watch";
 }
 
 if (!json.scripts.hasOwnProperty("build")) {
