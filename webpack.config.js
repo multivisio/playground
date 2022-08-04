@@ -23,7 +23,7 @@ module.exports = {
         static: './dist',
     },
     output: {
-        filename: '[name].bundle.js',
+        filename: 'JavaScript/[name].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -40,18 +40,20 @@ module.exports = {
         pages.map(
             (page) =>
                 new HtmlWebpackPlugin({
-                    inject: true,
+                    inject: 'body',
+                    minify: false,
                     template: `./src/templates/${page}.html`,
                     filename: `${page}.html`,
-                    chunks: [page],
+                    title: page.charAt(0).toUpperCase() + page.slice(1),
+                    meta: {
+                        "metaCharset": {'charset': 'UTF-8'},
+                        'viewport': 'width=device-width, initial-scale=1'
+                    },
+                    //chunks: [page],
+                    xhtml: true,
                 })
         )
     ),
-    watchOptions: {
-        aggregateTimeout: 200,
-        poll: 1000,
-        ignored: /node_modules/,
-    },
     module: {
         rules: [
             {
@@ -80,16 +82,16 @@ module.exports = {
                 },
             },
             {
-                test: /\.(eot|ttf|woff|woff2)$/,
-                type: 'asset',
-                parser: {
-                    dataUrlCondition: {
-                        maxSize: 8192,
-                    },
-                },
-                generator: {
-                    filename: 'Fonts/[name][ext]',
-                },
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'Fonts/'
+                        }
+                    }
+                ]
             },
         ],
     },
